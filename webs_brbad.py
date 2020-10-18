@@ -25,6 +25,7 @@ def info():
         pass
 
 
+# Crea una lista con el valor que contiene el tag
 def list_maker(elem_list):
     values = [val.text for val in elem_list]
     value_list = []
@@ -33,6 +34,7 @@ def list_maker(elem_list):
     return value_list
 
 
+# Crea un mapa dependiendo de 2 listas
 def map_generator(elem_list, second_list):
     my_map = {}
     for chapter in range(len(elem_list)):
@@ -69,7 +71,7 @@ def season_list(tag, key, value, second_tag):
     return list_maker(season_option_list)
 
 
-# Seleccionamos todas las synopsis
+# Seleccionamos todas las sinopsis
 def synopsis_list(tag, key, value, second_tag, second_key, second_value):
     seasons_and_episodes_list_container = soup.find(tag, {key: value})
     season_synopsis_list = seasons_and_episodes_list_container.find_all(second_tag, {second_key: second_value})
